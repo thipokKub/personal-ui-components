@@ -1,0 +1,159 @@
+@import "../baseSetting.scss";
+
+$shadowNormal: 7.5px;
+$shadowHover: 20px;
+
+@mixin outline-shadow() {
+    &.shadow {
+        box-shadow: 0 1.5px calc(#{$shadowNormal}/2) rgba(0, 0, 0, 0.2), 0 1.5px $shadowNormal 0 rgba(0, 0, 0, 0.19) inset;
+        text-shadow: 0 1.5px calc(#{$shadowNormal}/6) rgba(0, 0, 0, 0.2);
+        &.shadow-hover {
+            &:hover {
+                box-shadow: 0 4px calc(#{$shadowHover}/2) 0 rgba(0, 0, 0, 0.2), 0 4px $shadowHover 0 rgba(0, 0, 0, 0.19) inset;
+                text-shadow: 0 4px calc(#{$shadowHover}/6) rgba(0, 0, 0, 0.2);
+            }
+            &:active {
+                box-shadow: none;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                text-shadow: none;
+            }
+        }
+    }
+}
+
+@mixin shadow() {
+    &.shadow {
+        box-shadow: 0 1.5px calc(#{$shadowNormal}/2) rgba(0, 0, 0, 0.2), 0 1.5px $shadowNormal 0 rgba(0, 0, 0, 0.19) inset;
+        &.shadow-hover {
+            &:hover {
+                box-shadow: 0 4px calc(#{$shadowHover}/2) 0 rgba(0, 0, 0, 0.2), 0 4px $shadowHover 0 rgba(0, 0, 0, 0.19) inset;
+            }
+            &:active {
+                box-shadow: none;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}
+
+button.theme-base, .theme-base.btn {
+    position: relative;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    @each $item in $color {
+        &.#{nth($item, 1)} {
+            background-color: nth($item, 2);
+            color: nth($item, 3);
+        }
+    }
+
+    @each $item in $color {
+        &.o-#{nth($item, 1)} {
+            background-color: rgba(0,0,0,0);
+            color: nth($item, 2);
+            border: 2px solid nth($item, 2) !important;
+            @include outline-shadow();
+        }
+    }
+
+    @each $item in $color {
+        &.hover-o-#{nth($item, 1)}:hover {
+            background-color: rgba(0,0,0,0);
+            color: nth($item, 2);
+            border: 2px solid nth($item, 2) !important;
+            @include outline-shadow();
+        }
+    }
+
+    &.clear {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    &.round-corner {
+        border-radius: $defaultBorderRadius;
+    }
+
+    &.round-corner-large {
+        border-radius: $defaultLargeBorderRadius;
+    }
+
+    $size: 10;
+    @while $size < 160 {
+        &.width-#{$size} {
+            width: #{$size}px;
+        }
+        &.height-#{$size} {
+            height: #{$size}px;
+        }
+        &.size-#{$size} {
+            width: #{$size}px;
+            height: #{$size}px;
+        }
+        $size: $size + 5;
+    }
+    $font-size: 1;
+    @while $font-size <= 5 {
+        &.font-size-#{$font-size} {
+            font-size: calc( #{$font-size} * 0.5rem);
+        }
+
+        $font-size: $font-size + 1;
+    }
+
+    @each $item in $color {
+        &.hover-#{nth($item, 1)}:hover {
+            background-color: nth($item, 2);
+            color: nth($item, 3);
+            border-color: nth($item, 2) !important;
+            box-shadow: none;
+            text-shadow: none !important;
+
+            @include shadow();
+        }
+    }
+
+    &.hover-bright {
+        &:hover {
+            filter: brightness(0.95);
+        }
+        &:active {
+            filter: brightness(1.3);
+        }
+    }
+    &.hover-dark {
+        &:hover {
+            filter: brightness(1.1);
+        }
+        &:active {
+            filter: brightness(0.8);
+        }
+    }
+    &.shadow {
+        box-shadow: 0 1.5px calc(#{$shadowNormal}/2) rgba(0, 0, 0, 0.2), 0 1.5px $shadowNormal 0 rgba(0, 0, 0, 0.19);
+        &.shadow-hover {
+            &:hover {
+                box-shadow: 0 4px calc(#{$shadowHover}/2) 0 rgba(0, 0, 0, 0.2), 0 4px $shadowHover 0 rgba(0, 0, 0, 0.19) !important;
+            }
+            &:active {
+                box-shadow: none !important;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+
+    &.circle {
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,13 @@
+@import "../themeSetting.scss";
+
+input.theme-clean {
+    outline: none;
+    border: 1px solid $defaultLineColor;
+    border-radius: $defaultBorderRadius;
+    padding: 9px 7px;
+    font-size: 1rem;
+
+    &:focus {
+        border: 1px solid $highlightColor;
+    }
+}

@@ -1,0 +1,58 @@
+section.theme-clean,
+div.theme-clean {
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+
+section.theme-clean.flex,
+div.theme-clean.flex {
+  display: flex;
+}
+
+section.theme-clean.flex.center,
+div.theme-clean.flex.center {
+  justify-content: center;
+  align-items: center;
+}
+
+section.theme-clean.flex.column,
+div.theme-clean.flex.column {
+  flex-direction: column;
+}
+
+section.theme-clean.inline-flex,
+div.theme-clean.inline-flex {
+  display: inline-flex;
+}
+
+section.theme-clean.inline-flex.center,
+div.theme-clean.inline-flex.center {
+  justify-content: center;
+  align-items: center;
+}
+
+section.theme-clean.inline-flex.column,
+div.theme-clean.inline-flex.column {
+  flex-direction: column;
+}
+
+section.theme-clean.round-corner,
+div.theme-clean.round-corner {
+  border-radius: 8px;
+}
+
+section.theme-clean.card,
+div.theme-clean.card {
+  box-shadow: 0 1.5px 3.75px 0 rgba(0, 0, 0, 0.2), 0 1.5px 7.5px 0 rgba(0, 0, 0, 0.19);
+}
+
+section.theme-clean.card.click-able:hover,
+div.theme-clean.card.click-able:hover {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+section.theme-clean.card.click-able:active,
+div.theme-clean.card.click-able:active {
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}

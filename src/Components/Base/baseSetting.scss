@@ -1,0 +1,19 @@
+$defaultColor: #aaa;
+$highlightColor:  #3190FF;
+$defaultLineColor: #ccc;
+$defaultBorderRadius: 4px;
+$defaultLargeBorderRadius: 8px;
+
+$color: (
+    ("red", #f44336, #fff),
+    ("yellow", #FFDD01, #535353),
+    ("pink", #e91e63, #fff),
+    ("green", #8bc34a, #fff),
+    ("violet", #673ab7, #fff),
+    ("orange", #ffc107, #fff),
+    ("blue", #3190FF, #fff),
+    ("cyan", #00bcd4, #fff),
+    ("white", #fff, #000),
+    ("black", #000, #fff),
+    ("gray", #a7a7a7, #000)
+);

@@ -1,0 +1,39 @@
+@import "../themeSetting.scss";
+
+@mixin flex-content() {
+    &.center {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &.column {
+        flex-direction: column;
+    }
+}
+
+section.theme-clean,
+div.theme-clean {
+    padding: 20px 10px;
+    box-sizing: border-box;
+    &.flex {
+        display: flex;
+        @include flex-content();
+    }
+    &.inline-flex {
+        display: inline-flex;
+        @include flex-content();
+    }
+    &.round-corner {
+        border-radius: $defaultLargeBorderRadius;
+    }
+    &.card {
+        box-shadow: 0 1.5px 3.75px 0 rgba(0,0,0,0.2), 0 1.5px 7.5px 0 rgba(0,0,0,0.19);
+        &.click-able:hover {
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+        }
+        &.click-able:active {
+            box-shadow: none;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    }
+}
